@@ -1,0 +1,28 @@
+.statistic {
+  margin: 1em;
+  min-width: 200px;
+  color: white;
+  text-align: center;
+  font-family: "Roboto";
+}
+
+.icon {
+  font-size: 80px;
+  margin: 0px;
+  padding: 5px;
+  background: lightgray;
+}
+
+
+.data {
+  padding: 1em;
+  vertical-align: middle;
+}
+
+.value {
+  font-size: 40px;
+}
+
+.label {
+  text-transform: uppercase;
+}

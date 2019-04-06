@@ -1,0 +1,16 @@
+<p-panel header="Settings">
+  <div class="ui-g">
+    <label for="notify" class="ui-g-12 ui-md-2">Email To Notify</label>
+    <input id="notify" class="ui-g-12 ui-md-10" placeholder="Enter an Email Address" type="email" />
+  </div>
+  <div class="ui-g">
+    <label for="backup" class="ui-g-12 ui-md-2">Force Backup</label>
+    <button id="backup" class="ui-g-12 ui-md-10">Back up System Now</button>
+  </div>
+  <div class="ui-g">
+    <label for="statistics" class="ui-g-12 ui-md-2">Uptime Stats:</label>
+    <app-statistics [colour]='colour' [value]='statsValue' [label]="upTime"></app-statistics>
+
+  </div>
+
+</p-panel>

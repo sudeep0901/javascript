@@ -1,0 +1,19 @@
+{
+  "name": "rxjs-learning",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --experimental-modules index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "rxjs": "^6.3.3"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
+  }
+}

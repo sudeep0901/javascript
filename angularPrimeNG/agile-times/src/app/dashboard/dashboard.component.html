@@ -1,0 +1,38 @@
+<p>
+  dashboard works!
+</p>
+<div class="ui-g">
+  <app-statistics [colour]='colour' [value]='statsValue' [label]="upTime"></app-statistics>
+  <app-statistics [colour]='colour' [value]='statsValue' [label]="upTime"></app-statistics>
+  <app-statistics [colour]='colour' [value]='statsValue' [label]="upTime"></app-statistics>
+  <app-statistics [colour]='colour' [value]='statsValue' [label]="upTime"></app-statistics>
+</div>
+<div class="ui-g">
+  <p-panel header="Houts By Project(pie)" class="ui-g-12 ui-md-6">
+    <p-chart type="pie" [data]="hoursByProjectChartData" ></p-chart>
+  </p-panel>
+  <p-panel header="Houts By Project(doughtnut)" class="ui-g-12 ui-md-6">
+    <p-chart type="doughnut" [data]="hoursByProjectChartData"></p-chart>
+
+  </p-panel>
+  <p-panel header="Houts By Project(Polar)" class="ui-g-12 ui-md-6">
+    <p-chart type="polarArea" [data]="hoursByProjectChartData"></p-chart>
+  </p-panel>
+
+  <p-panel header="Houts By Project(Bar char)" class="ui-g-12 ui-md-6">
+    <p-chart type="bar" [data]="hoursByTeamChartData"></p-chart>
+  </p-panel>
+  <p-panel header="Houts By Project(Bar char)" class="ui-g-12 ui-md-6">
+    <p-chart type="line" [data]="hoursByTeamChartData"></p-chart>
+  </p-panel>
+  <p-panel header="Houts By Project(Radar char)" class="ui-g-12 ui-md-6">
+    <p-chart type="radar" [data]="hoursByTeamChartData"></p-chart>
+  </p-panel>
+  <p-panel header="Houts By Project(Radar char)" class="ui-g-12 ui-md-6">
+    <p-chart type="bar" [data]="hoursByTeamChartDataMixed"
+    (onDataSelect)="onDataSelect($event)" [options]='chartOptions' #mixedChart></p-chart>
+  </p-panel>
+
+
+
+</div>

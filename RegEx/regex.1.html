@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<title>Regular Expression</title>
+
+<script>
+    let testStr     ="freeCodeCamp";
+    let testRegex = /Code/;
+    testRegex.test(testStr);
+    console.log(testRegex.test(testStr));
+
+    let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
+    let waldoRegex = /Waldo/; // Change this line
+    let result = waldoRegex.test(waldoIsHiding);
+    let rxyesno = /yes|no/;
+    let str1 = "I am having yes";
+    console.log(testRegex.test(str1));
+    let str2 = "I am having no";
+    console.log(testRegex.test(str2));
+
+ //ignore case
+let myString = "freeCodeCamp";
+let fccRegex = /freecodecamp/i; // Change this line
+console.log(fccRegex.test(myString));
+
+//Regular Expressions - Extract Matches
+console.log("Hello world!".match(/hello/i));
+
+let ourRegexString =  "Regular exxpression";
+let ourRegex  = /expression/
+console.log(ourRegexString.match(ourRegex));
+if(ourRegexString.match(ourRegex)) {
+    console.log("found");
+}
+else {
+    console.log("Not found");
+}
+
+// search and return multiple occurances 
+
+let testStr1 = "Repeat, Repeat, Repeat Repeat";
+let testRegex1 = /Repeat/;
+console.log(testStr1.match(testRegex1));
+testRegex1 = /Repeat/g;
+console.log(testStr1.match(testRegex1));
+
+// Regular Expressions - Match Anything with Wildcard Period
+
+let humStr =    "I'll hum a song, humne";
+let hugStr =    "I'll hug a song, humne";
+let humRx =     /hu./;
+
+console.log(humStr.match(humRx));
+console.log(humStr.match(humRx).index);
+console.log(hugStr.match(humRx));
+
+
+</script>
+</head>
+<body>
+
+</body>
+
+</html>

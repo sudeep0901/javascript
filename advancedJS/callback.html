@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="createObject.css" />
+        <script>
+            function loadscript(src) {
+            let script = document.createElement('script');
+            script.src = src;
+            document.head.append(script);
+        };
+        loadscript('./callback.js');
+        // the code below loadScript doesn't wait for the script loading to finish
+
+        
+        // call will fail because loadsript is called asynchronously
+        // logconsole("Hello I am called after loading script"); 
+        
+        function add(a , b , callback) {
+            callback(a + b);
+            console.log(arguments);
+        }
+
+        function printresult(res) {
+            console.log(res);
+               console.log(arguments);
+               window.statusbar = "testing";
+        }
+
+        add(3,4,printresult);
+        
+
+        function loadscript1(src, callback) {
+
+            let script = document.createElement('script');
+            script.src = src;
+            script.onload = () => callback(script);
+            script.onerror = () => callback(new Error(`Script load error occured for ${script.src}`))
+            document.head.append(script);
+        }
+
+        function loadscript2(src, callback) {
+
+            let script = document.createElement('script');
+            script.src = src;
+            script.onload = () => callback(null, script);
+            script.onerror = () => callback(new Error(`Script load error occured for ${script.src}`))
+            document.head.append(script);
+        }
+
+        loadscript1('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js',script => {
+            debugger;
+            alert(`COOL ${script.src} is loaded`);
+            
+            alert(_);
+
+        });
+
+           loadscript2('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodas.js',function(error, script) {
+            if(error) {
+
+                console.log(error);
+                console.log("Script load error occured" + error.message);
+                alert(error);
+            }else
+            {
+            alert(`COOL ${script.src} is loaded`);
+            alert(_);
+            }
+
+        });
+
+        document.onerror = () => {
+            alert("there are errors while loading document");
+        }
+
+
+     /*   loadScript('1.js', function(error, script) {
+            pyramid of DOOM
+  if (error) {
+    handleError(error);
+  } else {
+    // ...
+    loadScript('2.js', function(error, script) {
+      if (error) {
+        handleError(error);
+      } else {
+        // ...
+        loadScript('3.js', function(error, script) {
+          if (error) {
+            handleError(error);
+          } else {
+            // ...continue after all scripts are loaded (*)
+          }
+        });
+
+      }
+    })
+  }
+}); */
+
+// pyramid of DOOM Solution
+/* loadScript('1.js', step1);
+
+function step1(error, script) {
+  if (error) {
+    handleError(error);
+  } else {
+    // ...
+    loadScript('2.js', step2);
+  }
+}
+
+function step2(error, script) {
+  if (error) {
+    handleError(error);
+  } else {
+    // ...
+    loadScript('3.js', step3);
+  }
+}
+
+function step3(error, script) {
+  if (error) {
+    handleError(error);
+  } else {
+    // ...continue after all scripts are loaded (*)
+  }
+}; */
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <h1>Wecome to JavaScript Opps</h1>
+
+        </div>
+        <div class='card'>
+            <div id='name'></div>
+            <div id='greeting'></div>
+            
+        </div>
+    </body>
+    <!-- <script src="callback.js"></script> -->
+
+    <script>
+        
+ 
+
+    </script>
+    </html>

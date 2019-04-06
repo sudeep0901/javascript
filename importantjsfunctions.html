@@ -1,0 +1,140 @@
+
+ <!-- HTML code for testing purposes (do not submit uncommented): -->
+<html>
+    <head>
+<script>
+    var as = document.getElementsByTagName('a');
+   
+function registerHandlers() {
+  var as = document.getElementsByTagName('a');
+  for (var i = 0; i < as.length; i++) {
+    as[i].onclick = function(e) {
+      for (var i = 0; i < as.length; i++) {
+        if(as[i] == e.target || as[i] ==this) 
+          alert(i);
+      }
+      return false;
+    }
+  }
+}
+window.onload = function() {
+    registerHandlers()
+    setup();
+
+    var x; // Declaration
+if(typeof x === 'undefined')
+  console.log(true); // Will return true
+  console.log("h" ==="a");
+
+
+  //javascript Arrays
+  var fruits = ["Apple", "Orange", "jelly", "Guava"];
+
+  console.log(fruits[0]);
+
+//  nest array within next
+  var ourArray = [["the universe", 42], ["everything", 101010]];
+  console.log(ourArray);
+}
+
+//push into array
+
+var pusAarry = ["a", "b", "c"];
+
+pusAarry.push("d","e",4);
+console.log(pusAarry);
+
+// pop removes last element onyl
+pusAarry.pop();
+console.log(pusAarry);
+
+//to remove first element use "shift"
+pusAarry.shift();
+console.log(pusAarry);
+
+
+// add element to front of arry using "Unshift"
+
+pusAarry.unshift("first element added");
+console.log(pusAarry);
+
+var tempArry = [];
+var shoppingList = [];
+var shoppingList1 = ["chocolate", 1];
+
+tempArry[0] = "pastry";
+tempArry[1] = 2;
+
+shoppingList.push(tempArry);
+shoppingList.push(tempArry);
+shoppingList.push(tempArry);
+shoppingList.push(shoppingList1);
+console.log(shoppingList);
+
+
+var myList = [["a",1],["a",1],["a",1]];
+console.log(myList);
+//fatest way to create list
+
+var arr = ['item 1', 'item 2', 'item 3'];
+var list = '<ul><li>' + arr.join('</li><li>') + '</li></ul>';
+
+var arrName = ["sudeep", "Sanjay", "Brajesh"];
+var namewithSalute = "Mr." + arrName.join(" Mr.");
+
+
+console.log(namewithSalute);
+console.log(list);
+function setup() {
+  // Write your code here.
+eleList =   document.getElementsByClassName("remove");
+for(i =0 ; i <eleList.length;i++) {
+    eleList[i].onclick = function(e) {
+        alert("clicked");
+        var elem = e.target.parentNode;
+        console.log(elem.parentNode)
+        elem.parentNode.removeChild(elem);
+        
+        console.log(e.target.parentNode);
+    }
+}
+console.log(eleList);
+
+var i = 1;
+console.log(i++);
+console.log(--i);
+console.log(Math.floor(5 / 2));
+console.log("sudeep Patel".length);
+
+var str = "sudeep";
+console.log(str[0]);
+
+for (ch in str)
+  console.log(str[ch]);
+}
+
+str = "Manasvi Patel";
+//string is immutable
+str[0] ='t';
+console.log(str);
+</script>
+
+
+    </head>
+<body>
+  In my life, I used the following web search engines:<br/>
+  <a href="//www.yahoo.com">Yahoo!</a><br/>
+  <a href="//www.altavista.com">AltaVista</a><br/>
+  <a href="//www.google.com">Google</a><br/>
+
+  <div class="image">
+  <img src="https://goo.gl/kjzfbE" alt="First">
+  <button class="remove">X</button>
+</div>
+<div class="image">
+  <img src="https://goo.gl/d2JncW" alt="Second">
+  <button class="remove">X</button>
+</div>
+    
+</body>
+</html>

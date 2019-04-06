@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="createObject.css" />
+        <style>
+            .circle {
+                transition-property: width, height, margin-left, margin-top;
+                transition-duration: 4s;
+                position: fixed;
+                transform: translateX(50%) translateY(-50%);
+                background-color: red;
+                border-radius: 50%;
+            }
+            .letter {
+                transition-property: font-size;
+                transition-duration: 4s;
+                position: fixed;
+                transform: translateX(50%) translateY(-50%);
+                background-color: red;
+
+                
+            }
+        </style>
+        <script>
+            
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <h1>Wecome to JavaScript Callbacks Example</h1>
+
+        </div>
+        <button onclick="showCircle(150, 150, 100)">showCircle(250, 150, 200)</button>
+
+    </body>
+    <!-- <script src="callback.js"></script> -->
+
+    <script>
+        
+        function showCircle(cx, cy, radius) {
+
+                let div = document.createElement('div');
+                div.style.width = 0;
+                div.style.height = 0;
+                div.style.left = cx + 'px';
+                div.style.right = cy + 'px';
+                div.className = 'circle';
+                document.body.append(div);
+                div.append("Hello, world!");
+
+
+                setTimeout(() => {
+                    console.log("settimeout call....");
+                    div.style.width = radius * 2 + 'px';
+                    div.style.height = radius * 2 + 'px';
+                }, 10);
+
+
+            }
+            this.i = 0;
+            let letters = ['A', 'B', 'C','D'];
+            function showLetters() {
+                let divl = document.createElement('div');
+                divl.style.width = '200px';
+                divl.style.height = '200px';
+                                divl.className = 'letter';
+                                
+
+
+            setInterval(() => {
+                console.log("running show letters:" + letters.length + i);
+                this.i = this.i + 1;
+                if(i === letters.length - 1) {
+                    console.log('reseting');
+                    this.i = 0;
+                }
+                    
+                divl.innerHTML = letters[i]
+                document.body.append(divl);
+
+            }, 100)
+                    }
+
+        </script>
+    </html>
